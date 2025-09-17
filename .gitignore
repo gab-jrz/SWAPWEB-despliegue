@@ -1,0 +1,46 @@
+# Root ignore for SWAPWEB monorepo
+# Dependencias
+node_modules/
+**/node_modules/
+
+# Builds/Dist
+build/
+dist/
+**/build/
+**/dist/
+
+# Coverage / reports
+coverage/
+**/coverage/
+.nyc_output/
+**/.nyc_output/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Env vars
+.env
+.env.*
+**/.env
+**/.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Tooling
+.vercel/
+.netlify/
+.tmp/
+.temp/
+
+# Cypress artifacts
+cypress/screenshots/
+cypress/videos/
+
+# IDE
+.vscode/
+.idea/

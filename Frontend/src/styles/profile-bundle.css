@@ -1,0 +1,6 @@
+/* Perfil - Bundle de estilos con orden determinista para producción
+   - Carga primero la base y luego el remodelado para que pueda sobrescribir
+   - Sin CSS Layers para no perder prioridad frente a estilos no layerizados
+*/
+@import './PerfilUsuario.css';
+@import './PerfilUsuario-Remodelado.css';
