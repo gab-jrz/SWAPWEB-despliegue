@@ -17,9 +17,21 @@
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* Fuerza 4 columnas */
     gap: 22px;
-    justify-items: stretch;
+    justify-items: center; /* Centrar cada card como en perfil */
     align-items: stretch; /* Evita recortes de altura en cards */
     grid-auto-flow: row;
+  }
+
+  /* Asegurar que cada card ocupe todo el ancho de su columna en Home */
+  .home-container .product-list .product-card-premium {
+    width: 100% !important;
+    max-width: 300px !important; /* similar a cards del perfil */
+    margin: 0 !important;
+  }
+
+  /* Ocultar corazón de favoritos en Home por seguridad adicional */
+  .home-container .product-list .favorite-btn {
+    display: none !important;
   }
   
   /* Estilos de la tarjeta de producto */
