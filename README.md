@@ -72,3 +72,65 @@ Sprint 5: Refactorización, cobertura de tests y documentación final
 - Seguridad, privacidad y autenticación robusta
 - Interfaz moderna y amigable
 - Fomento de comunidad mediante mensajería interna
+
+---
+
+## Despliegue
+
+Este repositorio contiene Frontend (React + Vite) y Backend (Node.js + Express).
+
+### Requisitos
+
+- Node.js 18+
+- MongoDB (local o remoto)
+
+### Variables de entorno (Backend)
+
+Crear `backend/.env` con, por ejemplo:
+
+```
+PORT=3001
+MONGODB_URI=mongodb://localhost:27017/swapweb
+JWT_SECRET=supersecreto
+CLIENT_URL=http://localhost:5173
+```
+
+### Desarrollo local
+
+- Frontend
+  - `cd Frontend`
+  - `npm install`
+  - `npm run dev`
+
+- Backend
+  - `cd backend`
+  - `npm install`
+  - `npm run dev`
+
+### Build de producción (Frontend)
+
+```
+cd Frontend
+npm install
+npm run build
+npm run preview
+```
+
+El build se genera en `Frontend/dist/`.
+
+### Notas de estilos del perfil
+
+- Importar siempre `src/styles/profile-bundle.css` en `src/Pages/PerfilUsuario.jsx` para asegurar el orden y el scoping de estilos del perfil (todas las reglas están bajo `.perfil-usuario-container`).
+
+### Despliegue sugerido
+
+- Frontend: Netlify / Vercel (root `Frontend/`, comando `npm run build`, directorio `dist`).
+- Backend: Render / Railway / Fly.io (root `backend/`, comando `npm start`).
+
+### Archivos subidos en tiempo de ejecución
+
+- El directorio `backend/uploads/` contiene archivos subidos por usuarios y fue agregado a `.gitignore`.
+- Si ya fueron versionados, limpiarlos del índice manteniéndolos localmente:
+  - `git rm -r --cached backend/uploads`
+  - `git commit -m "chore: stop tracking backend/uploads"`
+  - `git push`

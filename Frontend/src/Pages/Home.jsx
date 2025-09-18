@@ -718,6 +718,7 @@ const Home = () => {
                   valorEstimado={producto.valorEstimado}
                   disponible={producto.disponible}
                   onConsultar={() => navigate(`/producto/${producto.id}`)}
+                  hideFavoriteButton={true}
                 />
               ))
             ) : (

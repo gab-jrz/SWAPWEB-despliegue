@@ -11,13 +11,15 @@
     padding: 24px 0; /* Espaciado entre las tarjetas y los botones */
   }
   
-  /* Contenedor de las tarjetas de productos */
-  .product-list {
+  /* Contenedor de las tarjetas de productos (Home) */
+  /* Nota: usamos mayor especificidad y !important para sobreescribir index.css (.product-list auto-fit) */
+  .home-container .product-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columnas desktop */
-    gap: 24px;
-    justify-content: center;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* Fuerza 4 columnas */
+    gap: 22px;
+    justify-items: stretch;
     align-items: stretch; /* Evita recortes de altura en cards */
+    grid-auto-flow: row;
   }
   
   /* Estilos de la tarjeta de producto */
@@ -67,9 +69,9 @@
   
   /* Responsive grid y espaciados */
   @media (max-width: 1200px) {
-    .product-list {
-      grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columnas en pantallas medianas grandes */
-      gap: 22px;
+    .home-container .product-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important; /* 3 columnas en pantallas medianas grandes */
+      gap: 20px;
     }
   }
 
@@ -77,8 +79,8 @@
     main {
       padding: 18px 0; /* Reducir padding vertical en tablet */
     }
-    .product-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas en tablet */
+    .home-container .product-list {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* 2 columnas en tablet */
       gap: 18px;
     }
     button {
@@ -96,8 +98,8 @@
     main {
       padding: 14px 0; /* Compacto en mobile */
     }
-    .product-list {
-      grid-template-columns: 1fr; /* 1 columna en mobile */
+    .home-container .product-list {
+      grid-template-columns: 1fr !important; /* 1 columna en mobile */
       gap: 14px;
     }
     button {
