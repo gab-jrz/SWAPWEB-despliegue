@@ -699,7 +699,7 @@ const Home = () => {
 
         {/* Mostrar los productos */}
         {!loading && !error && (
-          <div className="product-list">
+          <div className="product-list home-grid">
             {productosParaMostrar.length > 0 ? (
               productosParaMostrar.map((producto) => (
                 <ProductCard
